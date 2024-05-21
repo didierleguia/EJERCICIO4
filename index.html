@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo2</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>4.	El promedio de prácticas de un curso se calcula con base en cuatro prácticas calificadas de las cuales se elimina la nota menor y se promedian las tres notas más altas. Diseñe un algoritmo que determine la nota eliminada y el promedio de prácticas de un estudiante.
+             </h3>
+        <div id="resultado">
+            <script>
+
+                //1. Declaracion de variables//
+                var practica1,practica2,practica3,practica4,promedio,practicaeliminada;
+               
+                //2. Fase entrada/lectura de datos//
+                practica1=parseInt(prompt("INGRESAR NOTA DE LA PRACTICA 1"));
+                practica2=parseInt(prompt("INGRESAR NOTA DE LA PRACTICA 2"));
+                practica3=parseInt(prompt("INGRESAR NOTA DE LA PRACTICA 3"));
+                practica4=parseInt(prompt("INGRESAR NOTA DE LA PRACTICA 4"));
+
+                //3. Fase del procesamiento de datos//
+                if (practica1 <= practica2 && practica1 <= practica3 && practica1 <= practica4) {
+                    practicaeliminada = practica1;
+                } else {
+                    if (practica2 <= practica1 && practica2 <= practica3 && practica2 <= practica4) {
+                        practicaeliminada = practica2;
+                    } else {
+                        if (practica3 <= practica1 && practica3 <= practica2 && practica3 <= practica4) {
+                            practicaeliminada = practica3;
+                        } else {
+                            practicaeliminada= practica4;
+                        } 
+                    }
+                }
+
+
+                promedio=(practica1+practica2+practica3+practica4-practicaeliminada)/3;
+
+                //fase final//
+               document.write("========PROMEDIO DE PRACTICAS========"+"<br>");
+               document.write("NOTA DE LA PRACTICA 1 ES:"+ practica1+"<br>");
+               document.write("NOTA DE LA PRACTICA 2 ES:"+ practica2+"<br>");
+               document.write("NOTA DE LA PRACTICA 3 ES:"+ practica3+"<br>");
+               document.write("NOTA DE LA PRACTICA 4 ES:"+ practica4+"<br>");
+               document.write("NOTA DELIMINIADA:"+ practicaeliminada+"<br>");
+               document.write("PROMEDIO FINAL:"+ promedio.toFixed(2));
+               
+
+                
+            
+               
+               
+                
+
+            </script>
+        </div>
+    </div>
+    
+</body>
+</html>
